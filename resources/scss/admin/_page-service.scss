@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/* サービス管理ページのスタイル */
+#table-service-list {
+    tr {
+        td {
+            vertical-align: middle;
+
+            .service-title {
+                @include flex-center-v;
+
+                .service-title-fig {
+                    width: 2.5rem;
+
+                    .service-title-fig-content {
+                        position: relative;
+                        width: 100%;
+                        padding-top: 75%;
+                        background-color: #b8b8b8;
+                        background-position: center !important;
+                        background-size: cover !important;
+                        border: 1px solid #dee2e6;
+                    }
+                }
+
+                .service-title-txt {
+                    width: calc(100% - 3.0rem);
+                    margin: 0 0 0 0.5rem !important;
+                }
+            }
+        }
+    }
+}

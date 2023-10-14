@@ -1,0 +1,209 @@
+@charset "utf-8";
+
+body.guest {
+    .auth {
+        padding: 5rem 0;
+
+        @media only screen and (max-width: 480px) {
+            padding: 0;
+        }
+
+        .auth-container {
+            width: 560px;
+            margin: 0 auto;
+            
+            @media only screen and (max-width: 600px) {
+                width: 100%;
+            }
+
+            .auth-head {
+                margin: 0 0 6rem;
+
+                @media only screen and (max-width: 480px) {
+                    margin: 0 0 3.0rem;
+                    padding: 0.5rem;
+                    border-bottom: 1px solid #b8b8b8;
+                }
+
+                .logo {
+                    text-align: center;
+
+                    @media only screen and (max-width: 480px) {
+                        width: 160px;
+                    }
+
+                    a {
+                        display: block;
+                        width: fit-content;
+                        margin: 0 auto;
+                        @include hover-effect;
+                    }
+                }
+            }
+
+            .auth-main {
+                margin: 0 0 2.0rem;
+                padding: 0 0 2.0rem;
+
+                @media only screen and (max-width: 480px) {
+                    padding: 0 1.0rem;
+                }
+
+                .auth-main-ttl {
+                    margin: 0 0 2.0rem;
+                    text-align: center;
+                    font-size: 1.5rem;
+                    font-weight: $fw-bold;
+                    color: $color-txt-main;
+
+                    @media only screen and (max-width: 480px) {
+                        margin: 0 0 1.5rem;
+                    }
+                }
+
+                .auth-main-lead {
+                    margin: 0 0 2.0rem;
+                    text-align: center;
+                    font-size: 0.9rem;
+                    font-weight: $fw-normal;
+                    line-height: 1.5;
+                    color: $color-txt-gray;
+                    
+                    @media only screen and (max-width: 480px) {
+                        margin: 0 0 1.5rem;
+                    }
+
+                    span {
+                        display: block;
+                        margin: 0.5rem 0 0;
+
+                        &.green {
+                            color: #adac4a;
+                        }
+                    }
+                }
+
+                form {
+                    display: block;
+                    width: 360px;
+                    margin: 0 auto;
+
+                    @media only screen and (max-width: 480px) {
+                        width: 100%;
+                    }
+
+                    .form-group {
+                        margin: 0 0 1.0rem;
+
+                        label {
+                            display: block;
+                            margin: 0 0 0.25rem;
+                            font-size: 0.8rem;
+                            font-weight: 700;
+                            line-height: 1.0;
+                            color: #231816;
+                        }
+
+                        input {
+                            display: block;
+                            width: 100%;
+                            height: 2.5rem;
+                            padding: 0.5rem;
+                            font-size: 0.9rem;
+                            font-weight: 400;
+                            color: #231816;
+                            background-color: #e9e9e9;
+                            border: none;
+                            outline: none;
+                        }
+
+                        .error {
+                            font-size: 0.75rem;
+                            font-weight: $fw-bold;
+                            color: red;
+                        }
+                    }
+
+                    .form-group-check {
+                        @include flex-center;
+        
+                        label {
+                            position: relative;
+                            display: inline-block;
+                            margin: 0.5rem 0 1.5rem;
+                            text-align: center;
+                            overflow: hidden;
+                            cursor: pointer;
+        
+                            input[type=checkbox] {
+                                @include absolute-center-y;
+                                left: 0;
+                                appearance: none !important;
+                                outline: none;
+                                border: none;
+        
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    z-index: 1;
+                                    display: none;
+                                    width: 0.7rem;
+                                    border: 2px solid $color-primary;
+                                }
+        
+                                &:checked {
+                                    &:before {
+                                        left: 5px;
+                                        top: 50%;
+                                        transform: translateY(-50%) rotate(-45deg);
+                                        display: block;
+                                        height: 0.3rem;
+                                        border-color: $color-primary;
+                                        border-top-style: none;
+                                        border-right-style: none;
+                                    }
+                                }
+        
+                                &:after {
+                                    content: '';
+                                    @include absolute-center-y;
+                                    left: 0;
+                                    width: 1.5rem;
+                                    height: 1.5rem;
+                                    background-color: #e9e9e9;
+                                }
+                            }
+        
+                            span {
+                                display: inline-block;
+                                padding: 0 0 0 2.0rem;
+                                font-size: 0.9rem;
+                                font-weight: $fw-normal;
+                                line-height: 1.5rem;
+                            }
+                        }
+                    }
+
+                    button {
+                        width: 100%;
+                        height: 2.5rem;
+                        margin: 1.0rem 0 0;
+                        font-size: 0.9rem;
+                        font-weight: 700;
+                        color: #ffffff;
+                        background-color: $color-primary;
+                        cursor: pointer;
+                        @include hover-effect;
+
+                        &.logout {
+                            color: $color-primary;
+                            background-color: #ffffff;
+                            border: 1px solid $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

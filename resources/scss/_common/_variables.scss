@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/* 変数 */
+$color-primary: #96003d;
+$color-txt-main: #231816;
+$color-txt-gray: #8e8e93;
+
+$fw-bold: 700;
+$fw-normal: 400;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center-v {
+    display: flex;
+    align-items: center;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin absolute-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin absolute-center-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin hover-effect {
+    transition: 0.3s ease all;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}

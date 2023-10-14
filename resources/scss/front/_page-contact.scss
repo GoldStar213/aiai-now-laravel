@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+/* お問い合わせページのスタイル */
+body.contact {
+    .contact-area {
+        padding: 6.0rem 0;
+        background-color: #ffffff;
+
+        .contacti-ttl {
+            text-align: center;
+            margin: 0 0 2.0rem;
+            font-size: 1.5rem;
+            font-weight: $fw-bold;
+            color: $color-txt-main;
+        }
+
+        .contact-box {
+            width: 480px;
+            margin: 0 auto;
+
+            @media only screen and (max-width: 480px) {
+                width: 100%;
+            }
+
+            .form-group {
+                margin: 0 0 1.5rem;
+
+                label {
+                    display: block;
+                    margin: 0 0 0.5rem;
+                    font-size: 0.9rem;
+                    font-weight: $fw-bold;
+                    color: $color-txt-main;
+                }
+
+                input[type=email] {
+                    width: 100%;
+                    height: 2.5rem;
+                    padding: 0 0.5rem;
+                    font-size: 0.9rem;
+                    font-weight: $fw-normal;
+                    color: $color-txt-main;
+                    border: 1px solid $color-primary;
+                    outline: none;
+                }
+
+                select {
+                    width: 100%;
+                    height: 2.5rem;
+                    padding: 0 0.5rem;
+                    font-size: 0.9rem;
+                    font-weight: $fw-normal;
+                    color: $color-txt-main;
+                    border: 1px solid $color-primary;
+                    outline: none;
+                }
+
+                textarea {
+                    width: 100%;
+                    min-height: 8.0rem;
+                    padding: 0.5rem;
+                    font-size: 0.9rem;
+                    font-weight: $fw-normal;
+                    line-height: 1.5;
+                    color: $color-txt-main;
+                    border: 1px solid $color-primary;
+                    resize: none;
+                    outline: none;
+                }
+            }
+
+            button {
+                @include flex-center;
+                width: 100%;
+                height: 2.5rem;
+                font-size: 0.9rem;
+                font-weight: $fw-bold;
+                color: #ffffff;
+                background-color: $color-primary;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                @include hover-effect;
+            }
+        }
+
+        .contact-thanks {
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: $fw-bold;
+            line-height: 1.5;
+            color: $color-txt-main;
+        }
+    }    
+}

@@ -1,0 +1,1 @@
+@extends('layouts.app', [ 'body_class' => 'user dashboard'])

@@ -1,0 +1,542 @@
+@charset "UTF-8";
+/* 変数 */ /* 基礎のスタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "MinneSystem", "MinneSansSerif", "MinneHiragino", "メイリオ", Meiryo, Osaka, "MS UI Gothic", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  color: #231816;
+  background-color: #f4f3f2;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+* a {
+  text-decoration: none !important;
+  color: unset;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, ul, li, a {
+  line-height: 1;
+  color: #333333;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 共通のスタイル */
+.nav-bottom {
+  display: none;
+}
+@media only screen and (max-width: 480px) {
+  .nav-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #b8b8b8;
+    z-index: 1005;
+  }
+  .nav-bottom .nav-bottom-menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-bottom .nav-bottom-menu-list .nav-bottom-menu-item {
+    width: 20%;
+  }
+  .nav-bottom .nav-bottom-menu-list .nav-bottom-menu-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .nav-bottom .nav-bottom-menu-list .nav-bottom-menu-item a .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    margin: 0 0 0.25rem;
+  }
+  .nav-bottom .nav-bottom-menu-list .nav-bottom-menu-item a .text {
+    font-size: 0.7rem;
+    color: #c1c1c1;
+  }
+  .nav-bottom .nav-bottom-menu-list .nav-bottom-menu-item a .text.current {
+    color: #96003d;
+  }
+}
+
+/* 共通のスタイル */
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 0.5rem 0;
+  background-color: #ffffff;
+  z-index: 1001;
+}
+header .site-header {
+  padding: 0 0.5rem;
+}
+header .site-header .logo {
+  width: 200px;
+  transition: 0.3s ease all;
+}
+header .site-header .logo:hover {
+  opacity: 0.7;
+}
+header .site-header .logo img {
+  height: 2rem;
+}
+header .hamburger {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  header .hamburger {
+    display: block;
+    position: fixed;
+    z-index: 1003;
+    right: 0;
+    top: 0;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    text-align: center;
+  }
+  header .hamburger span {
+    display: block;
+    position: absolute;
+    width: 1.5rem;
+    height: 2px;
+    left: 6px;
+    background: #96003d;
+    transition: 0.3s ease-in-out;
+  }
+  header .hamburger span:nth-child(1) {
+    top: 1rem;
+  }
+  header .hamburger span:nth-child(2) {
+    top: 1.5rem;
+  }
+  header .hamburger span:nth-child(3) {
+    top: 2rem;
+  }
+  header .hamburger.active span {
+    background-color: #ffffff;
+  }
+  header .hamburger.active span:nth-child(1) {
+    top: 1.5rem;
+    left: calc(0.5rem - 2px);
+    transform: rotate(-45deg);
+  }
+  header .hamburger.active span:nth-child(2), header .hamburger.active span:nth-child(3) {
+    top: 1.5rem;
+    transform: rotate(45deg);
+  }
+}
+header .global-nav {
+  position: fixed;
+  left: 0;
+  top: 3rem;
+  width: 260px;
+  height: calc(100% - 3rem);
+  background-color: #96003d;
+  z-index: 1002;
+}
+@media only screen and (max-width: 992px) {
+  header .global-nav {
+    top: 0;
+    left: 100%;
+    height: 100%;
+    transition: all 0.3s;
+  }
+}
+header .global-nav .global-nav-head {
+  padding: 0.5rem;
+  border-bottom: 1px solid #b8b8b8;
+}
+header .global-nav .global-nav-head .global-nav-head-main {
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease all;
+}
+header .global-nav .global-nav-head .global-nav-head-main:hover {
+  opacity: 0.7;
+}
+header .global-nav .global-nav-head .global-nav-head-main .global-nav-head-main-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+header .global-nav .global-nav-head .global-nav-head-main .global-nav-head-main-infos {
+  width: calc(100% - 3rem);
+  padding: 0 0 0 0.625rem;
+}
+header .global-nav .global-nav-head .global-nav-head-main .global-nav-head-main-infos .global-nav-head-main-infos-username {
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+}
+header .global-nav .global-nav-head .global-nav-head-main .global-nav-head-main-infos .global-nav-head-main-infos-usermail {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+}
+header .global-nav .global-nav-body .global-menu-list {
+  margin: 0;
+  padding: 0;
+}
+header .global-nav .global-nav-body .global-menu-list .global-menu-item {
+  transition: 0.3 ease all;
+}
+header .global-nav .global-nav-body .global-menu-list .global-menu-item a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+header .global-nav .global-nav-body .global-menu-list .global-menu-item a .ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+header .global-nav .global-nav-body .global-menu-list .global-menu-item a .ico img {
+  width: 100%;
+}
+header .global-nav .global-nav-body .global-menu-list .global-menu-item a .txt {
+  width: calc(100% - 1.75rem);
+  margin: 0 0 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+header .global-nav .global-nav-body .global-menu-list .global-menu-item.border-bottom {
+  border-bottom: 1px solid #b8b8b8;
+}
+header .global-nav .global-nav-body .global-menu-list .global-menu-item:hover {
+  background-color: #aab5ce;
+}
+header .global-nav .global-nav-body .global-menu-list .global-menu-item:hover a {
+  color: #231816;
+}
+@media only screen and (max-width: 992px) {
+  header .global-nav.active {
+    left: calc(100% - 260px);
+  }
+}
+header .global-nav-bg {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  header .global-nav-bg.active {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+  }
+}
+
+#content {
+  width: calc(100% - 260px);
+  margin: 3rem 0 0 260px;
+  padding: 1rem;
+}
+@media only screen and (max-width: 992px) {
+  #content {
+    width: 100%;
+    margin: 3rem 0 0;
+    padding: 1.5rem 0.5rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #content {
+    padding: 1.5rem 0.5rem 4.5rem;
+  }
+}
+#content .container {
+  max-width: 100%;
+}
+#content .mypage-ttl {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #231816;
+}
+#content .mypage-txt {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #231816;
+}
+#content label, #content p, #content span, #content a, #content ul, #content li, #content input, #content select, #content table {
+  font-size: 0.9rem;
+}
+#content label {
+  font-weight: 700;
+}
+#content textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* 代行依頼ページのスタイル */
+body.mypage.orders .tbl-orders-list {
+  width: 100%;
+  background-color: #ffffff;
+  border-collapse: collapse;
+}
+body.mypage.orders .tbl-orders-list tr th {
+  color: #ffffff;
+  background-color: #363636;
+}
+body.mypage.orders .tbl-orders-list tr td, body.mypage.orders .tbl-orders-list tr th {
+  padding: 0.5rem;
+  border: 1px solid #b8b8b8;
+}
+body.mypage.orders .msg-area {
+  max-height: 24rem;
+  overflow-y: auto;
+  padding: 0.5rem;
+  background-color: #92afd9;
+  border: 1px solid #b8b8b8;
+}
+body.mypage.orders .msg-area .msg-item {
+  margin: 0 0 1rem;
+}
+body.mypage.orders .msg-area .msg-item .msg-item-head {
+  position: relative;
+  margin: 0 0 0.25rem;
+  font-size: 0.8rem !important;
+  font-weight: 700;
+}
+body.mypage.orders .msg-area .msg-item .msg-item-head .date {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  font-size: 0.7rem !important;
+  font-weight: 400;
+  color: #717171;
+}
+body.mypage.orders .msg-area .msg-item .msg-item-txt {
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: calc(100% - 3rem);
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+body.mypage.orders .msg-area .msg-item.right .msg-item-txt {
+  margin-right: 3rem;
+}
+body.mypage.orders .msg-area .msg-item.left .msg-item-txt {
+  margin-left: auto;
+  background-color: #79e278;
+}
+body.mypage.orders .msg-form button[type=submit] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #96003d;
+  transition: 0.3s ease all;
+}
+body.mypage.orders .msg-form button[type=submit]:hover {
+  opacity: 0.7;
+}
+
+/* いいね！ページのスタイル */
+body.mypage.likes .like-service-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5rem;
+}
+body.mypage.likes .like-service-list::-webkit-scrollbar {
+  display: none;
+}
+body.mypage.likes .like-service-list .like-service-item {
+  width: calc(20% - 1rem);
+  margin: 0 0.5rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #b8b8b8;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+@media only screen and (max-width: 992px) {
+  body.mypage.likes .like-service-list .like-service-item {
+    display: inline-block;
+    width: calc(33.3333% - 1rem);
+  }
+}
+@media only screen and (max-width: 480px) {
+  body.mypage.likes .like-service-list .like-service-item {
+    width: calc(50% - 0.5rem);
+    margin: 0 0.25rem 0.75rem;
+  }
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-fig {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  border-bottom: 1px solid #b8b8b8;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-fig a.service {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center !important;
+  background-size: cover !important;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-fig a.like {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.35rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #b8b8b8;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-fig a.like:hover {
+  opacity: 0.7;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-fig .ordered {
+  position: absolute;
+  right: 3.25rem;
+  bottom: 0.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.35rem;
+  background-color: #ffffff;
+  border: 1px solid #b8b8b8;
+  border-radius: 50%;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-fig .ordered img {
+  width: 100%;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-infos {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-infos .like-service-infos-avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  background-color: #b8b8b8;
+  border-radius: 50%;
+  background-position: center !important;
+  background-size: cover !important;
+  transition: 0.3s ease all;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-infos .like-service-infos-avatar:hover {
+  opacity: 0.7;
+}
+@media only screen and (max-width: 992px) {
+  body.mypage.likes .like-service-list .like-service-item .like-service-infos .like-service-infos-avatar {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-infos .like-service-infos-main {
+  width: calc(100% - 3rem);
+  margin: 0 0 0 0.5rem;
+  transition: 0.3s ease all;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-infos .like-service-infos-main:hover {
+  opacity: 0.7;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-infos .like-service-infos-main span {
+  display: block;
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-infos .like-service-infos-main .title {
+  display: block;
+  margin: 0 0 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #231816;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 992px) {
+  body.mypage.likes .like-service-list .like-service-item .like-service-infos .like-service-infos-main .title {
+    marign: 0 0 0.1rem;
+    font-size: 0.75rem;
+  }
+}
+body.mypage.likes .like-service-list .like-service-item .like-service-infos .like-service-infos-main .price {
+  font-size: 0.8rem;
+  line-height: 1;
+  color: #8e8e93;
+}
+@media only screen and (max-width: 992px) {
+  body.mypage.likes .like-service-list .like-service-item .like-service-infos .like-service-infos-main .price {
+    font-size: 0.6rem;
+  }
+}

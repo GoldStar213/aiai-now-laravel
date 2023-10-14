@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* 変数 */ /* 共通のスタイル */ /* サービス管理ページのスタイル */
+#table-service-list tr td {
+  vertical-align: middle;
+}
+#table-service-list tr td .service-title {
+  display: flex;
+  align-items: center;
+}
+#table-service-list tr td .service-title .service-title-fig {
+  width: 2.5rem;
+}
+#table-service-list tr td .service-title .service-title-fig .service-title-fig-content {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+  background-color: #b8b8b8;
+  background-position: center !important;
+  background-size: cover !important;
+  border: 1px solid #dee2e6;
+}
+#table-service-list tr td .service-title .service-title-txt {
+  width: calc(100% - 3rem);
+  margin: 0 0 0 0.5rem !important;
+}
+
+/* 代行依頼管理ページのスタイル */
+.table-msg-wrapper {
+  max-height: 480px;
+  overflow-y: auto;
+}
